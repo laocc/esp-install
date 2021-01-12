@@ -1,0 +1,27 @@
+{
+  "name": "esp install",
+  "description": "ESP框架安装骨架文件",
+  "require": {
+    "laocc/esp": "*",
+    "php": ">7.0"
+  },
+  "require-dev": {
+    "php": ">7.0"
+  },
+  "autoload": {
+    "files": [
+      "library/Functions.php"
+    ],
+    "psr-4": {
+      "models\\": "models/",
+      "application\\": "application/",
+      "library\\": "library/"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  }
+}
