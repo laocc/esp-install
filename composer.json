@@ -1,8 +1,8 @@
 {
   "name": "laocc/esp-install",
-  "description": "ESP框架安装骨架文件",
+  "description": "esp install code",
   "require": {
-    "laocc/esp": "*",
+    "laocc/esp": ">1.0",
     "php": ">7.0"
   },
   "require-dev": {
