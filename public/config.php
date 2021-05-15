@@ -27,10 +27,6 @@ $option['before'] = function (&$option) {
 
     $option['error'] = ['display' => 'html'];
 
-    $conf = parse_ini_file(_ROOT . '/common/debug.ini');
-    $debug = new \esp\debug\Debug($conf);
-
-
     //系统定义文件存放的目录，如果需要放在其他目录，在这里重写，
     $option['config']['path'] = '/common/config';
 
