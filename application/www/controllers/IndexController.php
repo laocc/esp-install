@@ -9,9 +9,4 @@ class IndexController extends BaseController
     {
 
     }
-
-    public function authGet()
-    {
-        return 'auth code';
-    }
 }

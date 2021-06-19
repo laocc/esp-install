@@ -15,6 +15,8 @@ try {
     exit;
 }
 
+//生产环境下需注销下面这行，也就是不要每次都加载config文件
+define('_CONFIG_LOAD', true);
 
 $option = array();
 

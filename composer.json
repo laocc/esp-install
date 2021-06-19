@@ -2,11 +2,15 @@
   "name": "laocc/esp-install",
   "description": "esp install code",
   "require": {
-    "laocc/esp": ">1.0",
-    "php": ">7.0"
+    "laocc/esp": ">1.6.0",
+    "ext-json": "*",
+    "ext-redis": "*",
+    "php": ">7.1"
   },
   "require-dev": {
-    "php": ">7.0"
+    "ext-json": "*",
+    "ext-redis": "*",
+    "php": ">7.1"
   },
   "autoload": {
     "files": [
@@ -16,12 +20,6 @@
       "models\\": "models/",
       "application\\": "application/",
       "library\\": "library/"
-    }
-  },
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer/"
     }
   }
 }
