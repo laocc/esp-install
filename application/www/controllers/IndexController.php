@@ -3,7 +3,7 @@
 namespace application\www\controllers;
 
 
-class IndexController extends BaseController
+class IndexController extends _Base
 {
     public function indexGet()
     {

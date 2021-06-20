@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 ini_set('error_reporting', strval(E_ALL));
 ini_set('display_errors', 'true');
 ini_set('date.timezone', 'Asia/Shanghai');
@@ -15,8 +16,13 @@ try {
     exit;
 }
 
-//生产环境下需注销下面这行，也就是不要每次都加载config文件
-define('_CONFIG_LOAD', true);
+/**
+ * 是否每次都加载所有config文件，
+ * 定义成false值将先从redis中读取
+ * 但databases都会被先读取
+ */
+define('_CONFIG_LOAD', _DEBUG);
+
 
 $option = array();
 
@@ -35,14 +41,19 @@ $option['before'] = function (&$option) {
     //除了前面定义的目录之外，还需要引入其他地方的配置文件，可以配置任意多个
     $option['config']['extra'] = ['../custom'];
 
-    //不同环境下读取不同目录里的配置文件，这里面的所有文件内容都会array_merge合并到已加载过的所有同名文件数据中
-    $option['config']['folder'] = _DEBUG ? 'develop' : 'production';
+    /**
+     * 不同环境下读取不同目录里的配置文件，这里面的所有文件内容都会合并到已加载过的所有同名文件数据中
+     * 仅合并在path中的同名文件，
+     * 例：有path/set.ini时，将合并path/debug/set.ini
+     * 例：无path/conf.ini时，即便存在path/debug/conf.ini，也不会合并
+     */
+    $option['config']['folder'] = _DEBUG ? 'debug' : 'production';
 
     //直接指定需要合并的配置值，注意数组键名与上述配置文件的文件名及变量名，执行的是array_merge
-    $option['config']['merge'] = [
-        'app' => []
-    ];
+    $option['config']['merge'] = [];
 
+    //直接指定需要合并的配置值，注意数组键名与上述配置文件的文件名及变量名，执行的是array_replace_recursive
+    $option['config']['replace'] = [];
 
 };
 

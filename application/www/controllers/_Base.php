@@ -4,7 +4,7 @@ namespace application\www\controllers;
 
 use esp\core\Controller;
 
-class BaseController extends Controller
+class _Base extends Controller
 {
     public function _init()
     {
