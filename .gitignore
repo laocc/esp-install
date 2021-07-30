@@ -1,5 +1,4 @@
 *.db
-*.sh
 *.log
 /.idea/
 /runtime
