@@ -2,15 +2,15 @@
   "name": "laocc/esp-install",
   "description": "esp install code",
   "require": {
+    "php": ">7.1",
     "laocc/esp": ">1.6.0",
     "ext-json": "*",
-    "ext-redis": "*",
-    "php": ">7.1"
+    "ext-redis": "*"
   },
   "require-dev": {
+    "php": ">7.1",
     "ext-json": "*",
-    "ext-redis": "*",
-    "php": ">7.1"
+    "ext-redis": "*"
   },
   "autoload": {
     "files": [
